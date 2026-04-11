@@ -2,22 +2,14 @@ let optionButton = document.querySelectorAll(".option-button");
 let advancedOptionButton = document.querySelectorAll(".adv-option-button");
 let fontName = document.getElementById("fontName");
 let fontSizeRef = document.getElementById("fontSize");
-let writingArea = document.getElementById("text-input");
-let linkButton = document.getElementById("createLInk");
+let writingArea = document.getElementById("texte-input");
+let linkButton = document.getElementById("createLink");
 let alignButton = document.querySelectorAll(".align");
 let spacingButton = document.querySelectorAll(".spacing") ;
 let formatButton = document.querySelectorAll(".format") ;
 let scriptButton = document.querySelectorAll(".script") ;
 
-let fontList = [
-    "Arial",
-    "Verdana",
-    "Times New Roman",
-    "Garamond",
-    "Georgia",
-    "Courier New",
-    "Cursive",
-];
+let fontList = ["Arial", "Verdana", "Times New Roman"];
 
 const initializer = () =>{
     highlighter(alignButton, true);
@@ -29,7 +21,7 @@ const initializer = () =>{
       let option= document.createElement("option");
       option.value = value;
       option.innerHTML = value;
-      fontList.appendChild(option); 
+      fontName.appendChild(option); 
     })
 
     for(let i =1; i <=7; i++){
@@ -46,7 +38,7 @@ const modifyText = (command, defaultUI, value) => {
     document.execCommand (command, defaultUI, value);   
 };
 
-optionsButton.forEach((button) => {
+optionButton.forEach((button) => {
     button.addEventListener("click", () =>{
         modifyText(button.id, false, null);
     });
@@ -54,7 +46,7 @@ optionsButton.forEach((button) => {
 
 advancedOptionButton.forEach((button) => {
     button.addEventListener("change", () =>{
-        modifyText(button.id, false, null);
+        modifyText(button.id, false, button.value);
     });
 });
 
@@ -87,5 +79,11 @@ const highlighter = (className, needsRemoval) => {
     });
 };
 
-const  highlighterRemover = {}
+const  highlighterRemover = (className) =>{
+    className.forEach((button) => {
+        button.classList.remove("active");
+    });
+};
+
+window.onload = initializer;
 
