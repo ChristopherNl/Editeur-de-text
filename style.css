@@ -26,13 +26,13 @@ body::before {
     background-image: inherit; /* Même image que body */
     background-size: cover;
     background-position: center;
-    filter: blur(8px); /* Intensité du flou (4px=léger, 15px=fort) */
+    filter: blur(5px); /* Intensité du flou (4px=léger, 15px=fort) */
     z-index: -2;
 }
 
 .container{
-   background-color: rgba(240, 248, 255, 0.95);
-    backdrop-filter: blur(5px);
+   background-color: rgba(255, 255, 251, 0.95);
+    backdrop-filter: blur(10px);
     width: 90vmin;
     padding: 50px 30px;
     position:absolute;
@@ -55,7 +55,7 @@ button {
     display: grid;
     place-items: center;
     border-radius: 5px;
-    border: 4px solid rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,0,0,0.3);
     color: black;
     box-shadow: 4px 3px 5px rgb(36, 34, 34) inset;
     cursor: pointer;
@@ -94,11 +94,11 @@ input[type="color"]::-moz-color-swatch {
 
 #texte-input{
     margin-top: 10px;
-    border: 1px solid #a7a7a7;
+    border: 1px solid #b8b5b5;
     padding: 20px;
-     min-height: 50vh;
+    min-height: 50vh;
     overflow-y: auto;
-    background: #fafafa;
+    background: #e9e7e7;
 }
 
 .active{
